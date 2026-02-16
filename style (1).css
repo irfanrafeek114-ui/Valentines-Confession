@@ -1,0 +1,178 @@
+body {
+
+  margin: 0;
+
+  padding: 0;
+
+  font-family: cursive, Brush Script MT;
+
+  background: linear-gradient(to bottom, #A020F0, #FF00FF); /* Pink to red gradient */
+
+  color: white;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  height: 100vh;
+
+  overflow: hidden;
+
+}
+
+.container {
+
+  text-align: center;
+
+  z-index: 1;
+
+}
+
+h1 {
+
+  font-size: 2em;
+
+  margin-bottom: 20px;
+
+  animation: pulse 1.5s infinite;
+
+}
+
+.buttons button {
+
+  padding: 10px 20px;
+
+  margin: 10px;
+
+  font-size: 1.2em;
+
+  border: none;  /* Remove border for clean glass look */
+
+  border-radius: 15px;  /* Softer corners like iPhone */
+
+  cursor: pointer;
+
+  transition: transform 0.2s;
+
+  background: rgba(255, 255, 255, 0.2);  /* Semi-transparent white (adjust alpha 0.1-0.3 for more/less shade) */
+
+  backdrop-filter: blur(10px);  /* The glass blur effect—tweak px for intensity */
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+
+  color: white;  /* Keep text visible */
+
+}
+
+#yes {
+
+  background: rgba(255, 69, 0, 0.2);  /* Orange-red tint for Yes (semi-transparent) */
+
+}
+
+#no {
+
+  background: rgba(128, 128, 128, 0.2);  /* Gray tint for No (semi-transparent) */
+
+}
+
+.buttons button:hover {
+
+  transform: scale(1.1);
+
+  background: rgba(255, 255, 255, 0.3);  /* Slightly more opaque on hover for feedback */
+
+}
+
+.buttons button:hover {
+
+  transform: scale(1.1);
+
+}
+
+/* Floating hearts animation */
+
+.hearts {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+}
+
+.hearts::before {
+
+  content: '♥';
+
+  position: absolute;
+
+  font-size: 2em;  /* Base size—JS will randomize */
+
+  animation: float var(--duration) linear infinite;  /* Use variables for randomness */
+
+  white-space: nowrap;
+
+  transform: rotate(var(--rotation));  /* Random rotation */
+
+  left: var(--left);  /* Random start position */
+
+  animation-delay: var(--delay);  /* Random delay */
+
+}
+
+@keyframes float {
+
+  0% { transform: translateY(100vh) rotate(var(--rotation-start)); opacity: 0; }
+
+  50% { opacity: 1; }
+
+  100% { transform: translateY(-100vh) rotate(var(--rotation-end)); opacity: 0; }
+
+}
+
+h1 {
+
+  font-size: 5em;
+
+  margin-bottom: 20px;
+
+  animation: glow 2s infinite;  /* Change to glow */
+
+}
+
+@keyframes glow {
+
+  0% { color: white; text-shadow: 0 0 5px black; }
+
+  50% { color: white; text-shadow: 0 0 5px white; }  /* Pink-red glow */
+
+  100% { color: white; text-shadow: 0 0 5px black; }
+
+}
+
+@media (max-width: 600px) {
+
+  h1 { font-size: 1.5em; }
+
+  .buttons button { font-size: 1em; padding: 8px 16px; }
+
+}
+@keyframes confetti {
+
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+
+}
